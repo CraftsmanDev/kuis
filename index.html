@@ -71,7 +71,29 @@
   </div>
 
 <script>
+const ytFrame = document.getElementById("ytMusic");
+const musicIcon = document.getElementById("musicIcon");
+let isPlaying = false;
 
+function toggleMusic() {
+  if (!isPlaying) {
+    ytFrame.src = ytFrame.src.replace("&mute=1", "&mute=0");
+    musicIcon.className = "fa-solid fa-volume-high";
+  } else {
+    ytFrame.src = ytFrame.src.replace("&mute=0", "&mute=1");
+    musicIcon.className = "fa-solid fa-volume-xmark";
+  }
+  isPlaying = !isPlaying;
+}
+
+// Aktifkan musik setelah klik pertama (aturan browser)
+document.body.addEventListener("click", () => {
+  if (!isPlaying) {
+    ytFrame.src = ytFrame.src.replace("&mute=1", "&mute=0");
+    musicIcon.className = "fa-solid fa-volume-high";
+    isPlaying = true;
+  }
+}, { once: true });
 /* ================== KUIS ================== */
 const quizQuestions = [
   {
@@ -202,6 +224,7 @@ loadQuestion();
 
 </body>
 </html>
+
 
 
 
