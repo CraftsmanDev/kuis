@@ -15,8 +15,7 @@
 <body class="bg-gradient-to-br from-blue-100 to-indigo-200 min-h-screen flex items-center justify-center px-4">
 
   <!-- 🎵 AUDIO MUSIK -->
-  <audio id="bgMusic" loop>
-    <iframe
+  <iframe
   id="ytMusic"
   width="0"
   height="0"
@@ -24,7 +23,6 @@
   frameborder="0"
   allow="autoplay; encrypted-media"
 ></iframe>
-  </audio>
 
   <div class="bg-white w-full max-w-2xl p-6 sm:p-8 rounded-2xl shadow-2xl relative">
 
@@ -73,32 +71,6 @@
   </div>
 
 <script>
-/* ================== MUSIK ================== */
-const bgMusic = document.getElementById("bgMusic");
-const musicIcon = document.getElementById("musicIcon");
-let isPlaying = false;
-
-function toggleMusic() {
-  if (!isPlaying) {
-    bgMusic.volume = 0.3;
-    bgMusic.play();
-    musicIcon.className = "fa-solid fa-volume-high";
-  } else {
-    bgMusic.pause();
-    musicIcon.className = "fa-solid fa-volume-xmark";
-  }
-  isPlaying = !isPlaying;
-}
-
-// Autoplay setelah klik pertama (aturan browser)
-document.body.addEventListener("click", () => {
-  if (!isPlaying) {
-    bgMusic.volume = 0.3;
-    bgMusic.play();
-    musicIcon.className = "fa-solid fa-volume-high";
-    isPlaying = true;
-  }
-}, { once: true });
 
 /* ================== KUIS ================== */
 const quizQuestions = [
@@ -230,5 +202,6 @@ loadQuestion();
 
 </body>
 </html>
+
 
 
